@@ -96,8 +96,19 @@ if __name__ == '__main__':
     import logging
     import sys
     import requestlogger
+
+    from cherrypy.wsgiserver import CherryPyWSGIServer
+
     loggedapp = requestlogger.WSGILogger(
         app,
         [logging.StreamHandler(stream=sys.stdout)],
         requestlogger.ApacheFormatter())
-    bottle.run(loggedapp, server='cherrypy', host='0.0.0.0', port=func_port)
+
+    server = CherryPyWSGIServer(
+        ('0.0.0.0', int(func_port)),
+        loggedapp,
+        server_name='My_App',
+        numthreads=30)
+
+    server.start()
+    # bottle.run(loggedapp, server='cherrypy', host='0.0.0.0', port=func_port)
