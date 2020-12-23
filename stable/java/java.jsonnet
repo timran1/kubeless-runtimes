@@ -6,11 +6,11 @@
       version: "1.8",
       images: [{
         phase: "compilation",
-        image: "kubeless/java-init@sha256:5f2e7227998799469c2b7ec6102aee5fbef715465c97448f1bdc91c4160d0baf",
+        image: "kubeless/java-init@sha256:c6364edc993d222482b0a1608d32dd744b8f11a73f3cd7395dee611ae143c8b8",
         command: "/compile-function.sh"
        }, {
         phase: "runtime",
-        image: "kubeless/java@sha256:68754101add18772fd2275ce7a21e05c7e3f495eb745c75cc2a38a9e003b81db"
+        image: "kubeless/java@sha256:bfdfcbf7468fdb47baf78f9b3a7372ec5c7d2598cc44bb828e07a2366ee97287"
       }],
     },
     {
@@ -18,11 +18,11 @@
       version: "11",
       images: [{
         phase: "compilation",
-        image: "kubeless/java-init@sha256:1f36ed53e882a15388dd5d437d8f659f0bad38810669b195e0446ee595498c75",
+        image: "kubeless/java-init@sha256:23390ab52914e32bc344f6f364ba711debb76b93a4cebd0b99a7d274ad12e1b0",
         command: "/compile-function.sh"
        }, {
         phase: "runtime",
-        image: "kubeless/java@sha256:e336adef7566a466dd5461213a95e11acc0ef7a23dac34631216b8546b38567d"
+        image: "kubeless/java@sha256:e4cfa243f21e498e2d291174a785f8f70ca87feeb40641d09d6ef9260b9bc999"
       }],
     }
   ],

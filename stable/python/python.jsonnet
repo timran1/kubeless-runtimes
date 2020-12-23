@@ -2,36 +2,6 @@
   ID: "python",
   versions: [
     {
-      name: "python27",
-      version: "2.7",
-      images: [{
-        phase: "installation",
-        image: "python:2.7",
-        command: "pip install --prefix=$KUBELESS_INSTALL_VOLUME -r $KUBELESS_DEPS_FILE"
-      }, {
-        phase: "runtime",
-        image: "kubeless/python@sha256:ce8181c88ea093659d79e0f33b2be5dd3b8c75d25c0f465fdedf7dfc3a6a1e5a",
-        env: {
-          PYTHONPATH: "$(KUBELESS_INSTALL_VOLUME)/lib/python2.7/site-packages:$(KUBELESS_INSTALL_VOLUME)",
-        },
-      }],
-    },
-    {
-      name: "python34",
-      version: "3.4",
-      images: [{
-        phase: "installation",
-        image: "python:3.4",
-        command: "pip install --prefix=$KUBELESS_INSTALL_VOLUME -r $KUBELESS_DEPS_FILE"
-      }, {
-        phase: "runtime",
-        image: "kubeless/python@sha256:55e1169c69df25960dd4434566c72a4c6da8e43a7abd8e3d3f5638a6c186e9fe",
-        env: {
-          PYTHONPATH: "$(KUBELESS_INSTALL_VOLUME)/lib/python3.4/site-packages:$(KUBELESS_INSTALL_VOLUME)",
-        },
-      }],
-    },
-    {
       name: "python36",
       version: "3.6",
       images: [{
@@ -40,7 +10,7 @@
         command: "pip install --prefix=$KUBELESS_INSTALL_VOLUME -r $KUBELESS_DEPS_FILE"
       }, {
         phase: "runtime",
-        image: "kubeless/python@sha256:63dc8e71d6e6f39561121763c23640373ee00eecfa630db1c01edf247c2204d9",
+        image: "kubeless/python@sha256:ec5f3aea63b80002e4cdf7cd006ec5fb6d6329aa44b4a537ec559fb14b4e2411",
         env: {
           PYTHONPATH: "$(KUBELESS_INSTALL_VOLUME)/lib/python3.6/site-packages:$(KUBELESS_INSTALL_VOLUME)",
         },
@@ -55,9 +25,24 @@
         command: "pip install --prefix=$KUBELESS_INSTALL_VOLUME -r $KUBELESS_DEPS_FILE"
       }, {
         phase: "runtime",
-        image: "kubeless/python@sha256:76a32b0f4e11f02cd9e51147f4c3fed870c1ee2c9463167e9ef0e6856de99794",
+        image: "kubeless/python@sha256:c5245959c1e2dae1642606e891e83a2ab87333755fce3b0685677836adfdcc6f",
         env: {
           PYTHONPATH: "$(KUBELESS_INSTALL_VOLUME)/lib/python3.7/site-packages:$(KUBELESS_INSTALL_VOLUME)",
+        },
+      }],
+    },
+    {
+      name: "python38",
+      version: "3.8",
+      images: [{
+        phase: "installation",
+        image: "python:3.8",
+        command: "pip install --prefix=$KUBELESS_INSTALL_VOLUME -r $KUBELESS_DEPS_FILE"
+      }, {
+        phase: "runtime",
+        image: "kubeless/python@sha256:efe867b7d1375e557d72487b068722211c4d8e08f9d0482f347c09046cc87872",
+        env: {
+          PYTHONPATH: "$(KUBELESS_INSTALL_VOLUME)/lib/python3.8/site-packages:$(KUBELESS_INSTALL_VOLUME)",
         },
       }],
     },

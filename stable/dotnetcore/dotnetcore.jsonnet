@@ -51,11 +51,11 @@
       version: "3.1",
       images: [{
         phase: "compilation",
-        image: "lorenzoangelini3/kubeless-compile-dotnetcore31@sha256:4e6adfe873f7c4cd5e0d582bb5122f94c6d6ea73baa03b486dd93b8406deb8ca",
+        image: "lorenzoangelini3/kubeless-compile-dotnetcore31@sha256:12a85136102b9df6b09138dadd3bf77af111dc992286a0fd8ab4b03fd897fcc5",
         command: "/app/compile-function.sh $KUBELESS_INSTALL_VOLUME"
        }, {
         phase: "runtime",
-        image: "lorenzoangelini3/kubeless-runtime-dotnetcore31@sha256:337b964b69f86bf56add04861055aa67c2a661c0943f952ed97363b7cccdaa4b",
+        image: "lorenzoangelini3/kubeless-runtime-dotnetcore31@sha256:1d5b22f51a5584689e8ed0d31e428d50bef12cd48e31b7447d20df5372c72ba7",
         env: {
           DOTNETCORE_HOME: "$(KUBELESS_INSTALL_VOLUME)/packages",
         },
